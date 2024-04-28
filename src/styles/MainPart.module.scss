@@ -1,0 +1,141 @@
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .logo{
+    opacity: 0;
+  }
+
+  img{
+    margin-bottom: 93px;
+  }
+
+  h1{
+    font-size: 72px;
+    font-weight: 700;
+    color: #162C4E;
+    opacity: 0;
+  }
+
+  p{
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0;
+
+    &:first-of-type{
+      width: 400px;
+    }
+  }
+
+  button{
+    background-color: #1D4169;
+    border-radius: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 12px;
+    opacity: 0;
+
+    span{
+      font-size: 18px;
+      color: #fff;
+    }
+
+    img{
+      margin: 0 0 0 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 430px;
+    padding-top: 98px;
+
+    img{
+        margin-bottom: 168px;
+    }
+
+    h1{
+        font-size: 36px;
+    }
+
+    p{
+        font-size: 16px;
+
+        &:first-of-type{
+          width: 270px;
+        }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 320px;
+    padding-top: 80px;
+
+    .logo{
+        width: 128px;
+        margin-bottom: 66px;
+    }
+  }
+}
+
+@keyframes appearUp {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appearDown {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appearUpH1 {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 0.39;
+    transform: translateX(0);
+  }
+}
+
+.animUp{
+  animation-name: appearUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.animUpH1{
+  animation-name: appearUpH1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+.animDown{
+  animation-name: appearDown;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}

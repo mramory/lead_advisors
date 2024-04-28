@@ -1,0 +1,150 @@
+.container {
+  color: #fff;
+  display: flex;
+
+  .mini_box {
+    cursor: pointer;
+    max-width: 85px;
+    background-color: #162c4e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+
+    p {
+      margin-bottom: 90px;
+      font-size: 32px;
+      font-weight: 600;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+    }
+    span {
+      font-size: 40px;
+      font-weight: 500;
+    }
+  }
+
+  .full_box {
+    width: 0;
+    visibility: hidden;
+    background-image: url("../../assets/ui/people.png");
+    background-size: cover;
+    flex-direction: column;
+    justify-content: end;
+
+    .info {
+      box-sizing: border-box;
+      max-width: 364px;
+      background-image: url("../../assets/ui/people_muted.png");
+      background-size: cover;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: end;
+      padding: 40px;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      span {
+        margin-top: 5px;
+        font-size: 18px;
+        opacity: 0.8;
+      }
+      button {
+        width: fit-content;
+        color: #fff;
+        margin-top: 25px;
+        background: transparent;
+        padding: 20px 40px;
+        border: 2px #fff solid;
+        border-left: 5px #fff solid;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+
+    .mini_box {
+      max-width: 100%;
+      max-height: 85px;
+      flex-direction: row-reverse;
+      justify-content: start;
+
+      p {
+        transform: rotate(0);
+        margin-bottom: 0;
+        margin-left: 30px;
+      }
+      span {
+        margin-left: 20px;
+      }
+    }
+
+    .full_box{
+            display: none;
+    }
+  }
+}
+
+@keyframes width_full {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes height_full {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes appear {
+  from {
+    visibility: visible;
+    width: 0;
+  }
+  to {
+    visibility: visible;
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+@keyframes appear_height {
+  from {
+    visibility: visible;
+    height: 0;
+  }
+  to {
+    visibility: visible;
+    max-height: 500px;
+    height: 100%;
+  }
+}
+
+.appear {
+  animation-name: appear;
+  animation-fill-mode: forwards;
+  animation-duration: 0s;
+}
+
+.disappear {
+  animation-name: disappear;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+.width_full {
+  animation-name: width_full;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}

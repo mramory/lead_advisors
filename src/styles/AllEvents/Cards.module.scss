@@ -1,0 +1,15 @@
+.container{
+    box-sizing: border-box;
+    height: calc(100% - 218px);
+    padding: 0 110px 100px;
+    display: flex;
+    // grid-template-columns: repeat(8, minmax(0, 1fr));
+    // grid-template-rows: repeat(1, minmax(0, 1fr));
+    column-gap: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        flex-direction: column;
+    }
+}
