@@ -8,7 +8,7 @@ import clsx from "clsx";
 export const Footer = ({isLoaded}: {isLoaded: boolean}) => {
   const scrollToAllEvents = () => {
     document.querySelector("#AllEvPage")?.classList.add(sAllEv.appear)
-    let scrollDistance = window.innerHeight;
+    const scrollDistance = window.innerHeight;
     document.querySelector("#all_ev_header")?.classList.add(sAllEv.animUp)
     window.scrollBy(0, scrollDistance);
     document.querySelector("#mainPage")?.classList.add(sApp.disappear)

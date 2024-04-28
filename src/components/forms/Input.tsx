@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import arrow from "../../assets/ui/arrow-right.svg";
 import s from "../../styles/forms/Input.module.scss";
 import Modal from "react-modal";
@@ -10,8 +10,9 @@ export const Input = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  const submitHandler = (e: any) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    //@ts-expect-error
     if (!e.target["email"].value) {
       return;
     }
